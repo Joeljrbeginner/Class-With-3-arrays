@@ -1,0 +1,34 @@
+public class Ex3Array {
+    private int[] array;
+    private int numElementos;
+    private int maxElementos;
+
+    public Ex3Array(int tamanho) {
+        array = new int[tamanho];
+        numElementos = 0;
+        maxElementos = tamanho;
+    }
+
+    public boolean adicionar(int n) {
+        if (numElementos < maxElementos) {
+            array[numElementos] = n;
+            numElementos++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int calculaMedia() {
+        if (numElementos == 0) {
+            return 0;
+        }
+
+        int soma = 0;
+        for (int i = 0; i < numElementos; i++) {
+            soma += array[i];
+        }
+
+        return soma / numElementos;
+    }
+}
